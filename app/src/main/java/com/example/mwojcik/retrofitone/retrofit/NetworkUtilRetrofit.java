@@ -75,6 +75,8 @@ public class NetworkUtilRetrofit implements Callback<SimpleModel> {
         RegresAPI regresAPI = retrofit.create(RegresAPI.class);
         Call<SimpleModel> call = regresAPI.loadData("1");
 //        Call call = regresAPI.loadDataSimple("1");
+        //Uzywamy enqueue do asynchronicznego wywołania - po co blokowac. Do synchronicznego
+        //uzylibysmy call.execute(this);
         call.enqueue(this);
 
     }
