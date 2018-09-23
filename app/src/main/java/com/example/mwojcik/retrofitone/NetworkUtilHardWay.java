@@ -54,7 +54,7 @@ public class NetworkUtilHardWay {
         HttpURLConnection httpURLConnection = null;
         BufferedReader bufferedReader = null;
         try {
-            URL url = new URL("http://www.google.pl");
+            URL url = new URL("https://reqres.in/api/users?page=3");
             httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.connect();
             InputStream inputStream = httpURLConnection.getInputStream();
