@@ -142,6 +142,13 @@ public class NetworkUtilHardWay {
                 JSONArray jsonArray = (JSONArray) jsonObject.get("data");
                 JSONObject object = jsonArray.getJSONObject(1);
                 Log.d("Response json", object.toString());
+
+                int id = (int) object.get("id");
+                String name = object.getString("first_name");
+                String lastName = object.getString("last_name");
+                String avatarURL = object.getString("avatar");
+                ModelExample modelExample = new ModelExample(id, name, lastName, avatarURL);
+                Log.d("Response object", modelExample.toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
