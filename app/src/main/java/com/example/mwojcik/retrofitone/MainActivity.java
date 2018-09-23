@@ -1,8 +1,9 @@
 package com.example.mwojcik.retrofitone;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
+import com.example.mwojcik.retrofitone.retrofit.NetworkUtilRetrofit;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -12,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        NetworkUtilHardWay.downloadResponseFromNetwork();
+//        NetworkUtilHardWay.downloadResponseFromNetwork();
+        NetworkUtilRetrofit networkUtilRetrofit = new NetworkUtilRetrofit();
+        networkUtilRetrofit.start();
     }
 }
